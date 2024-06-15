@@ -1,0 +1,51 @@
+"a b # d"
+
+getNextValidChar(string str, int str_pointer)
+Pseudocode for getting the next valid character in a string that is not deleted by a backspace:
+
+1. Declare a variable with zero called 'backspaces' which stores the accumulated backspace '#' in a string.
+
+3. Iterate through the string in reverse, while the s_ptr is greater than or equal to zero
+
+	3.1 If the characher in the current position 's_ptr' is equal to the '#'.
+	
+		3.2.1.1 Decrement the current position 's_ptr'.
+	
+		3.1.2 Increment the variable 'backspaces'.
+		
+	3.2 Otherwise, if the current character in the current position 's_ptr' is not equal to the '#', but the variable 'backspaces' is not zero.
+	
+		3.2.1.1 Decrement the current position 's_ptr'.
+		
+		3.2.1.2 Decrement the variable 'backspaces'.
+		
+	3.3 If none of the conditions are met, which means the character is not intended to be deleted by a backspace
+
+		3.3.1 Break the loop and return the current position 's_ptr', which is the next valid character
+		
+- - -
+
+backspaceCompare(string s, string t)
+Pseudocode for backstring compare function:
+
+1. Declare a variable with the last index of the string called 's_ptr' which holds the current position in a string 's'.
+
+2. Declare a variable with the last index of the string called 't_ptr' which holds the current position in a string 't'.
+
+3. While the 's_ptr' is greater than or equal to 0 or 't_ptr' is greater than or equal to 0
+
+	3.1 Invoke the function getNextValidChar for 's' to get the next valid character that is not deleted by a backspace
+	
+	3.2 Invoke the function getNextValidChar for 't' to get the next valid character that is not deleted by a backspace
+	
+	3.3 If both s_ptr and t_ptr are greater than or equal to 0 but their current characters are not equal
+	
+		3.3.1 Immediately break the loop and return false, because of the mismatch
+		
+	3.4 If both s_ptr and t_ptr are not in the same position
+	
+		3.4.1 Immediately break the loop and return false, because of the mismatch
+		
+	3.5 Decrement both 's_ptr' and 't_ptr'
+
+
