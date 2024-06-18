@@ -241,7 +241,7 @@ int main(int argc, char* argv[]) {
 
 	/*
 
-	Binary Search Tree (BST)
+	Complete Binary Tree (CBT)
 
 	          1 
 	         / \
